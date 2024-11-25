@@ -1,0 +1,24 @@
+<xr-scene ar-system="modes:Marker" bind:ready="handleReady">
+  <xr-assets bind:progress="handleAssetsProgress" bind:loaded="handleAssetsLoaded">
+   <!-- <xr-asset-load
+      type="video-texture" asset-id="hikari"
+      src="https://ar-scene-source.nosdn.127.net/e7884fe894b2308a32d8b1e34903be50.mp4" options="loop:true"
+    /> -->
+    <xr-asset-load
+      type="video-texture" asset-id="hikari"
+      src="https://ar-scene-source.nosdn.127.net/b7d1be02ffc25182e877b7507b18ce11.mp4" options="loop:true"
+    />
+    <xr-asset-material asset-id="mat" effect="simple" uniforms="u_baseColorMap: video-hikari" />
+  </xr-assets>
+  <xr-node wx:if="{{loaded}}">
+    <!-- <xr-ar-tracker mode="Marker" src="https://ar-scene-source.nosdn.127.net/7313d8b1885f2fb0b9b7bd231c07fa35.jpg" bind:ar-tracker-switch="handleTrackerSwitch"> -->
+    <xr-ar-tracker mode="Marker" src="https://ar-scene-source.nosdn.127.net/0f244db588f1aaf4281e25e30b67e83e.png" bind:ar-tracker-switch="handleTrackerSwitch">
+      <!-- <xr-mesh node-id="mesh-plane" geometry="plane" position="0 0 0" scale="0.7 1 1.03" rotation="0 90 0" material="mat" /> -->
+      <xr-mesh node-id="mesh-plane" geometry="plane" position="0 0 0" scale="1.02 1 0.76" rotation="0 0 0" material="mat" />
+    </xr-ar-tracker>
+    <xr-camera
+      id="camera" node-id="camera" position="1 1 1" clear-color="0.925 0.925 0.925 1"
+      background="ar" is-ar-camera
+    />
+  </xr-node>
+</xr-scene>
