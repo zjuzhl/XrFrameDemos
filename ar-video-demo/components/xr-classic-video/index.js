@@ -102,7 +102,6 @@ Component({
       scene.assets.addAsset("material", "video_mat", videoMat);
       console.log("video asset loaded");
       this.setData({ loaded: true });
-      this.triggerEvent("assetLoaded");
     },
   },
 });

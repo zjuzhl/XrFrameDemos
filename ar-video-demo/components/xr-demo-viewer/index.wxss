@@ -24,43 +24,8 @@
   background: #fff;
 }
 
-.intro .title {
-  font-size: 36rpx;
-  padding-bottom: 20rpx;
-}
-
-.intro .description {
-  color: #8f8f8f;
-  font-size: 28rpx;
-}
-
 .intro-detail {
   padding: 30rpx;
-}
-
-.code-inner {
-  margin: 0rpx;
-  padding: 30rpx;
-  font-size: 30rpx;
-  background-color: #f9f9fa;
-}
-
-.code-inner rich-text {
-  word-wrap: break-word;
-}
-
-.block-name {
-  display: inline-block;
-  color: #b457ff;
-}
-
-.attr-name {
-  display: inline-block;
-  color: #ff4d00;
-}
-
-.ml20 {
-  margin-left: 20rpx;
 }
 
 .intro-title {

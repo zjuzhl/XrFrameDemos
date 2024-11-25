@@ -1,9 +1,5 @@
-<!-- <xr-demo-viewer
-  title="雷军-Are You Ok 单曲"
-  intro="基于 2DMarker 实现，扫描指定照片显示对应的视频演示."
-> -->
 <xr-demo-viewer
-  title="会动的图片"
+  title="{{xrTitle}}"
 >
   <xr-classic-video
     disable-scroll

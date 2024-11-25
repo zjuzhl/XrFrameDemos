@@ -12,7 +12,6 @@ module.exports = Behavior({
     windowHeight: 1000,
     heightScale: 0.8,
     dpiScale: 1,
-    showBackBtn: false,
   },
   attached: function(){},
   ready() {
