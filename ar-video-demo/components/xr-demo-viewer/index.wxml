@@ -1,13 +1,11 @@
 <view class="demo-wrap">
   <scroll-view class="demo-viewer" scroll-y="{{true}}">
-    <block bind:sceneReady="handleSceneReady">
+    <block>
       <slot></slot>
     </block>
     <view class="intro">
       <view class="intro-detail">
-        <view class="intro-title" ><text>{{title}}</text> <button class="share" open-type="share">分享给好友</button></view>
-        <view class="description">{{intro}}</view>
-        <slot name="intro"></slot>
+        <view class="intro-title"><text>{{title}}</text></view>
       </view>
     </view>
   </scroll-view>

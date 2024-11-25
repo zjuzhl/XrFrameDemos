@@ -4,7 +4,6 @@
 > -->
 <xr-demo-viewer
   title="会动的图片"
-  intro="基于 2DMarker 实现，扫描指定图片展示."
 >
   <xr-classic-video
     disable-scroll
@@ -12,12 +11,7 @@
     width="{{renderWidth}}"
     height="{{renderHeight}}"
     style="width:{{width}}px;height:{{height}}px;top:{{top}}px;left:{{left}}px;display:block;"
-    markerImg="{{markerImg}}"
-    bind:arTrackerState="handleARTrackerState"
+    marker_img="{{markerImg}}"
+    video_url="{{videoUrl}}"
   />
-
-  <view wx:if="{{arTrackerShow}}" style="text-align: center;padding: 12px;">
-    <view>Tracker识别状态：{{arTrackerState}}</view>
-    <view wx:if="{{arTrackerError}}">错误信息：{{arTrackerError}}</view>
-  </view>
 </xr-demo-viewer>

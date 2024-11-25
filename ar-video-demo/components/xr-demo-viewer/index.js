@@ -4,18 +4,6 @@ Component({
       type: String,
       value: '',
     },
-    intro: {
-      type: String,
-      value: '',
-    },
-    hint: {
-      type: String,
-      value: '',
-    },
-    showBackBtn: {
-      type: Boolean,
-      value: false,
-    },
   },
   data: {
   },
@@ -25,9 +13,7 @@ Component({
     }
   },
   methods: {
-    onClickBack() {
-      wx.navigateBack()
-    },
+
   },
   options: {
     multipleSlots: true
