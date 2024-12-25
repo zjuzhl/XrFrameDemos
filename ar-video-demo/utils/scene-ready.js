@@ -1,7 +1,6 @@
 module.exports = Behavior({
   behaviors: [],
-  properties: {
-  },
+  properties: {},
   data: {
     left: 0,
     top: 0,
@@ -13,9 +12,9 @@ module.exports = Behavior({
     heightScale: 0.8,
     dpiScale: 1,
   },
-  attached: function(){},
+  attached: function () {},
   ready() {
-    const info = wx.getSystemInfoSync();
+    const info = wx.getWindowInfo();
     const width = info.windowWidth;
     const windowHeight = info.windowHeight;
     const height = windowHeight * this.data.heightScale;
@@ -25,51 +24,55 @@ module.exports = Behavior({
       height,
       renderWidth: width * dpi * this.data.dpiScale,
       renderHeight: height * dpi * this.data.dpiScale,
-      windowHeight
+      windowHeight,
     });
   },
   methods: {
     onLoad(options) {
       wx.reportEvent("xr_frame", {
-        "xr_page_path": options.path
+        xr_page_path: options.path,
       });
     },
     onShareAppMessage() {
       try {
         if (wx.xrScene) {
-          const buffer = wx.xrScene.share.captureToArrayBuffer({quality: 0.5});
+          const buffer = wx.xrScene.share.captureToArrayBuffer({
+            quality: 0.5,
+          });
           const fp = `${wx.env.USER_DATA_PATH}/xr-frame-share.jpg`;
-          wx.getFileSystemManager().writeFileSync(fp, buffer, 'binary');
+          wx.getFileSystemManager().writeFileSync(fp, buffer, "binary");
           return {
             title: this.getTitle(),
-            imageUrl: fp
+            imageUrl: fp,
           };
         }
       } catch (e) {
         return {
-          title: this.getTitle()
+          title: this.getTitle(),
         };
       }
     },
     onShareTimeline() {
       try {
         if (wx.xrScene) {
-          const buffer = wx.xrScene.share.captureToArrayBuffer({quality: 0.5});
+          const buffer = wx.xrScene.share.captureToArrayBuffer({
+            quality: 0.5,
+          });
           const fp = `${wx.env.USER_DATA_PATH}/xr-frame-share.jpg`;
-          wx.getFileSystemManager().writeFileSync(fp, buffer, 'binary');
+          wx.getFileSystemManager().writeFileSync(fp, buffer, "binary");
           return {
             title: this.getTitle(),
-            imageUrl: fp
+            imageUrl: fp,
           };
         }
       } catch (e) {
         return {
-          title: this.getTitle()
-        }
+          title: this.getTitle(),
+        };
       }
     },
     getTitle() {
-      return wx.xrTitle ? `XR - ${wx.xrTitle}` : 'XR-FRAME';
+      return wx.xrTitle ? `XR - ${wx.xrTitle}` : "XR-FRAME";
     },
-  }
-})
+  },
+});

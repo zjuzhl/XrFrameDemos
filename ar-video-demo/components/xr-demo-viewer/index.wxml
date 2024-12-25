@@ -1,12 +1,11 @@
 <view class="demo-wrap">
-  <scroll-view class="demo-viewer" scroll-y="{{true}}">
-    <block>
+  <block>
       <slot></slot>
     </block>
     <view class="intro">
       <view class="intro-detail">
         <view class="intro-title"><text>{{title}}</text></view>
+        <view class="intro-desc"><text>{{desc}}</text></view>
       </view>
     </view>
-  </scroll-view>
 </view>

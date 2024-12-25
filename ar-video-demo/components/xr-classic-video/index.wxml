@@ -1,6 +1,6 @@
-<xr-scene ar-system="modes:Marker" bind:ready="handleReady">
+<xr-scene ar-system="modes:Marker" bind:ready="handleReady" bind:ar-ready="handleARReady">
   <xr-node>
-    <xr-ar-tracker mode="Marker" src="{{marker_img}}" bind:ar-tracker-switch="handleTrackerSwitch">
+    <xr-ar-tracker mode="Marker" src="{{marker_img}}" bind:ar-tracker-state="handleTrackerState" bind:ar-tracker-switch="handleTrackerSwitch">
       <xr-node wx:if="{{loaded}}">
         <xr-mesh node-id="mesh-plane" geometry="plane" material="video_mat" position="{{mesh_position}}" scale="{{mesh_scale_w}} 1 {{plane_height * mesh_scale_h}}" />
       </xr-node>

@@ -43,12 +43,18 @@ Component({
   },
   methods: {
     handleReady: function ({ detail }) {
-      const xrScene = (this.scene = detail.value);
-      console.log("xr-scene", xrScene);
+      this.scene = detail.value;
+      console.log("xr-scene handleReady", detail.value);
+    },
+    handleARReady: function ({ detail }) {
+      console.log("xr-scene handleARReady", detail);
+    },
+    handleTrackerState: function ({ detail }) {
+      console.log("xr-scene handleTrackerState", detail.value);
     },
     handleTrackerSwitch: function ({ detail }) {
+      console.log("handleTrackerSwitch", detail.value);
       const active = detail.value;
-      console.log("handleTrackerSwitch", detail);
       const video = this.scene.assets.getAsset("video-texture", "video1");
       if (active) {
         video.play();

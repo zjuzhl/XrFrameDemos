@@ -4,6 +4,10 @@ Component({
       type: String,
       value: '',
     },
+    desc: {
+      type: String,
+      value: '',
+    },
   },
   data: {
   },
