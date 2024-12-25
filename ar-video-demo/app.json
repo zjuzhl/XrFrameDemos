@@ -1,6 +1,8 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/home/index",
+    "pages/ar-liveimage/index",
+    "pages/ar-threedof/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",

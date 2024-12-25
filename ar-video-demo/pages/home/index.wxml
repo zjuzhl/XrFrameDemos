@@ -1,0 +1,6 @@
+<!--pages/home/index.wxml-->
+
+<view style="position: absolute;top: 30%;left: 50%;transform: translate(-50%,-50%);">
+  <button style="margin-top: 10rpx;" bind:tap="onNavigateToLiveImage"> 会动的图片 </button>
+  <button style="margin-top: 10rpx;" bind:tap="onNavigateToThreeDof"> 沉浸天空 </button>
+</view>
